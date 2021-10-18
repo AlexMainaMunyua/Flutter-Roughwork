@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_testing_application/src/creamy_field.dart';
 import 'package:flutter_testing_application/src/search_and_highlight.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         // home: ContactsExampleApp(),
 
         // creamy field
-        // home: MyEditorApp()
+        home: MyEditorApp()
 
         );
   }
