@@ -25,10 +25,8 @@ class MyApp extends StatelessWidget {
         // creamy field
         // home: MyEditorApp()
 
-        home: PayMaterialApp(),
-  
-
-
+        // home: PayMaterialApp(),
+      
         );
   }
 }
