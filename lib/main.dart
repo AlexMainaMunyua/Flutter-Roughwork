@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_testing_application/src/creamy_field.dart';
+import 'package:flutter_testing_application/src/pay.dart';
 
 
 void main() => runApp(MyApp());
@@ -22,7 +23,11 @@ class MyApp extends StatelessWidget {
         // home: ContactsExampleApp(),
 
         // creamy field
-        home: MyEditorApp()
+        // home: MyEditorApp()
+
+        home: PayMaterialApp(),
+  
+
 
         );
   }

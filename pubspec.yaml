@@ -33,6 +33,10 @@ dependencies:
   permission_handler:
   substring_highlight:
   scroll_to_index: any
+  pay:
+  flutter_localizations:
+    sdk: flutter
+  intl: any
 
 
 
