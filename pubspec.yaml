@@ -37,6 +37,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  google_pay: ^0.0.1
 
 
 
