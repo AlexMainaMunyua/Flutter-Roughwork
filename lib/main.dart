@@ -44,11 +44,11 @@ class _SubscribeToGroupState extends State<SubscribeToGroup> {
   String _googlePayToken = 'Unknown';
   String _platformVersion = 'Unknown';
 
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   initPlatformState();
+  // }
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
