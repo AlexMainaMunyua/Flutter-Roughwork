@@ -161,16 +161,7 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
             ],
           ),
         ),
-        // body: Scrollbar(
-        //   child: SingleChildScrollView(
-        //     child: RichText(
-        //       textScaleFactor: 1.5,
-        //       text: searchMatch(
-        //         text,
-        //       ),
-        //     ),
-        //   ),
-        // ),
+   
         body: ListView.builder(
           controller: controller,
           itemCount: 5,
