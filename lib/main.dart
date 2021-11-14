@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // search and Highlights
-      // home: SearchandHighlights()
+      home: SearchandHighlights()
 
       // contact Service
       // home: ContactsExampleApp(),
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
 
       // home: WelcomeToGroup(),
 
-      home: MergeTextStyle(),
+      // home: MergeTextStyle(),
     );
   }
 }
@@ -45,9 +45,10 @@ class MergeTextStyle extends StatefulWidget {
 
 class _MergeTextStyleState extends State<MergeTextStyle> {
   List<TextSpan> textParts = [
-    TextSpan(text: "Hello"),
-    TextSpan(text: " world!")
+    TextSpan(text: "Hello", style: TextStyle(color: Colors.red)),
+    TextSpan(text: " World")
   ];
+
   String search;
 
   List<Match> matches = <Match>[];
@@ -77,20 +78,25 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
     for (String token in refinedSearch.split(" ")) {
       if (token.contains(refinedSearch)) {
         matches.addAll(token.allMatches(refinedMatch));
-        print(match.length);
       }
     }
 
     if (refinedMatch.contains(refinedSearch)) {
       if (refinedMatch.substring(0, refinedSearch.length) == refinedSearch) {
+        print("here 1");
         _list.add(TextSpan(
-            text: match.join().substring(0, refinedSearch.length),
+            style: posRes,
+            text: refinedMatch.substring(0, refinedSearch.length),
             children: searchMatch(match)));
         return _list;
         // return TextSpan(
         //   style: posRes,
         //   text: match.substring(
-        //       0, refinedSearch.length), // a sub string of the searched text
+        //       0, refinedSearch.length), // a
+        //       match.substring(
+        //         refinedSearch.length,
+        //       ),
+        //     ), sub string of the searched text
         //   children: [
         //     searchMatch(
         //       match.substring(
@@ -100,15 +106,15 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
         //   ],
         // );
       } else if (refinedMatch.length == refinedSearch.length) {
-        _list.add(TextSpan(text: match.join(), style: posRes));
-        return _list;
+        print("here 2");
+        // _list.add(TextSpan(text: match.join(), style: posRes));
+        // return _list;
         // return TextSpan(text: match, style: posRes);
       } else {
-        _list.add(TextSpan(
-            style: negRes,
-            text:
-                match.join().substring(0, refinedMatch.indexOf(refinedSearch)),
-            children: searchMatch(match)));
+        int x = refinedMatch.indexOf(refinedSearch);
+        print("here 3 $x");
+        _list.add(TextSpan(style: negRes, text: match.join()));
+
         return _list;
         // return TextSpan(
         //   style: negRes,
@@ -126,15 +132,17 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
         // );
       }
     } else if (!refinedMatch.contains(refinedSearch)) {
-      _list.add(TextSpan(text: match.join(), style: negRes));
-      return _list;
+      print("here 4");
+      // _list.add(TextSpan(text: match.join(), style: negRes));
+      // return _list;
       // return TextSpan(text: match, style: negRes);
     }
-    _list.add(TextSpan(
-        style: negRes,
-        text: match.join().substring(0, refinedMatch.indexOf(refinedSearch)),
-        children: searchMatch(match)));
-    return _list;
+    print("here 5");
+    // _list.add(TextSpan(
+    //     style: negRes,
+    //     text: match.join().substring(0, refinedMatch.indexOf(refinedSearch)),
+    //     children: searchMatch(match)));
+    // return _list;
     // return TextSpan(
     //   text: match.substring(0, refinedMatch.indexOf(refinedSearch)),
     //   style: negRes,
