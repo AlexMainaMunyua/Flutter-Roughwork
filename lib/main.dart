@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // search and Highlights
-      home: SearchandHighlights()
+      // home: SearchandHighlights()
 
       // contact Service
       // home: ContactsExampleApp(),
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       // creamy field
       // home: MyEditorApp()
 
-      // home: PayMaterialApp(),
+      home: PayMaterialApp(),
 
       // home: WelcomeToGroup(),
 
