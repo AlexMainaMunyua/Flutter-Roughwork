@@ -14,7 +14,7 @@ class _HighLightState extends State<HighLight> {
 
   List<String> list = ['Good morning friends', 'How are you doing today', 'morning is the best time to exercise', 'I dont know why he doesnt morning want us to use one branch', 'I am sure he is willing to help', 'I think he is just playing game', 'All eyes on me now', 'Ill try my best to be morning the best'];
 
-  String match = '';
+  String match = 'morning';
 
   List<int> itemList = [];
 
@@ -68,9 +68,6 @@ class _HighLightState extends State<HighLight> {
           }),
     );
   }
-
-
-
 
   _nextCounter(){
     if(itemList.isNotEmpty ){
