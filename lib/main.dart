@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_recaptcha_v2/flutter_recaptcha_v2.dart';
+import 'package:flutter_testing_application/src/in_app_purchases.dart';
 import 'package:flutter_testing_application/src/stackoverflow/button.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -31,10 +32,30 @@ class MyApp extends StatelessWidget {
 
       // home: ChangeFontStyle(),
       // home: MyHomePage(title:  ' Google ReCaptcha Demo',)
-      home: RoundButton(),
+      home: SubscribeToGroup(),
     );
   }
 }
+
+class CircleAva extends StatelessWidget {
+  const CircleAva({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child:  Center(
+          child: CircleAvatar(
+            radius: 60,
+            backgroundColor: Colors.blue,
+
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
 
