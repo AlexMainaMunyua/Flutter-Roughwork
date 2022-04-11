@@ -97,6 +97,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.0"
+  flutter_in_app_billing:
+    dependency: "direct main"
+    description:
+      name: flutter_in_app_billing
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   flutter_localizations:
     dependency: "direct main"
     description: flutter

@@ -39,7 +39,7 @@ dependencies:
   intl: any
   google_pay: ^0.0.1
   flutter_recaptcha_v2:
-
+  flutter_in_app_billing: ^0.0.1
 
 
 

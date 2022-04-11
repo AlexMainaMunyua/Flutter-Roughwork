@@ -27,10 +27,11 @@ class _SubscribeToGroupState extends State<SubscribeToGroup> {
       platformVersion = await GooglePay.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
+
     }
 
-    // await GooglePay.initializeGooglePay(
-    //     "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");
+    await GooglePay.initializeGooglePay(
+        "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");
 
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
