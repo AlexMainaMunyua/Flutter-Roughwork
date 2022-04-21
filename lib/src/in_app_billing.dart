@@ -53,7 +53,7 @@ class _MyAppBillingState extends State<MyAppBilling> {
             ),
             FlatButton(
                 onPressed: () {
-                  FlutterInAppBilling.purchase("https://groups.thesocialapp.net/dinnerseriesv2");
+                  FlutterInAppBilling.subscribe("test");
                 },
                 child: Text("Buy"))
           ],
