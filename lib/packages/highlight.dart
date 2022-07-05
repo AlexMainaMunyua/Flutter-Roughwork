@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class HighLight extends StatefulWidget {
-  const HighLight({Key key}) : super(key: key);
+  const HighLight({Key? key}) : super(key: key);
 
   @override
   _HighLightState createState() => _HighLightState();
@@ -10,7 +10,7 @@ class HighLight extends StatefulWidget {
 
 class _HighLightState extends State<HighLight> {
 
-  AutoScrollController autoController;
+  AutoScrollController? autoController;
 
   List<String> list = ['Good morning friends', 'How are you doing today', 'morning is the best time to exercise', 'I dont know why he doesnt morning want us to use one branch', 'I am sure he is willing to help', 'I think he is just playing game', 'All eyes on me now', 'Ill try my best to be morning the best'];
 
@@ -96,9 +96,9 @@ class _HighLightState extends State<HighLight> {
 
     print("index $index");
 
-    await autoController.scrollToIndex(index, preferPosition: AutoScrollPosition.middle);
+    await autoController!.scrollToIndex(index, preferPosition: AutoScrollPosition.middle);
 
-    autoController.highlight(index);
+    autoController!.highlight(index);
 
   }
 }

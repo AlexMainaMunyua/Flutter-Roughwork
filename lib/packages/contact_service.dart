@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _askPermissions(null);
+    _askPermissions(null!);
   }
 
   Future<void> _askPermissions(String routeName) async {

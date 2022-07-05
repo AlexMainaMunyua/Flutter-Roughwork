@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class SearchandHighlights extends StatefulWidget {
-  const SearchandHighlights({Key key}) : super(key: key);
+  const SearchandHighlights({Key? key}) : super(key: key);
 
   @override
   _SearchandHighlightsState createState() => _SearchandHighlightsState();
@@ -10,14 +10,14 @@ class SearchandHighlights extends StatefulWidget {
 
 class _SearchandHighlightsState extends State<SearchandHighlights> {
   String text = '''How are you'''.replaceAll("\n", " ").replaceAll("  ", "");
-  String search;
+  String? search;
   TextStyle posRes =
           TextStyle(color: Colors.black, backgroundColor: Colors.red),
       negRes = TextStyle(color: Colors.black, backgroundColor: Colors.white);
 
   List<Match> matches = <Match>[];
 
-  AutoScrollController controller;
+  AutoScrollController? controller;
 
   TextSpan searchMatch(String match) {
     if (search == null || search == "")
@@ -27,7 +27,7 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
     var refinedMatch = match.toLowerCase();
 
     // searched text
-    var refinedSearch = search.toLowerCase();
+    var refinedSearch = search!.toLowerCase();
 
     for (String token in refinedSearch.split(" ")) {
       if (token.contains(refinedSearch)) {
@@ -80,12 +80,13 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
     );
   }
 
-  List<int> _index = List();
+  // ignore: deprecated_member_use
+  List<int> _index = [];
 
   Future incrementIndex(int i) async {
     _index[i]++;
 
-    await controller.scrollToIndex(_index[i],
+    await controller!.scrollToIndex(_index[i],
         preferPosition: AutoScrollPosition.middle);
   }
 
@@ -95,7 +96,7 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
     } else {
       _index[i]--;
     }
-    await controller.scrollToIndex(_index[i],
+    await controller!.scrollToIndex(_index[i],
         preferPosition: AutoScrollPosition.middle);
   }
 
@@ -144,7 +145,7 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
                         icon: Icon(
                       Icons.arrow_drop_up,
                       color: Colors.black,
-                    )),
+                    ), onPressed: () {  },),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -152,7 +153,7 @@ class _SearchandHighlightsState extends State<SearchandHighlights> {
                       icon: Icon(
                         Icons.arrow_drop_down,
                         color: Colors.black,
-                      ),
+                      ), onPressed: () {  },
                       // onPressed: () => decrementIndex(matches.indexOf(search)),
                     ),
                   ),

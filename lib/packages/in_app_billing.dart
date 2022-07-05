@@ -20,7 +20,7 @@ class _MyAppBillingState extends State<MyAppBilling> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String? platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       await FlutterInAppBilling.initBp(
@@ -35,7 +35,7 @@ class _MyAppBillingState extends State<MyAppBilling> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
+      _platformVersion = platformVersion!;
     });
   }
 

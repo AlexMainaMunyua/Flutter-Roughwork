@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MergeTextStyle extends StatefulWidget {
-  const MergeTextStyle({Key key}) : super(key: key);
+  const MergeTextStyle({Key? key}) : super(key: key);
 
   @override
   _MergeTextStyleState createState() => _MergeTextStyleState();
@@ -13,7 +13,7 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
     TextSpan(text: " World")
   ];
 
-  String search;
+  String? search;
 
   List<Match> matches = <Match>[];
 
@@ -26,7 +26,7 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
     super.initState();
   }
 
-  List<TextSpan> searchMatch(List<TextSpan> match) {
+  List<TextSpan>? searchMatch(List<TextSpan> match) {
     List<TextSpan> _list = [];
     if (search == null || search == "") {
       _list.add(TextSpan(children: match, style: negRes));
@@ -37,9 +37,9 @@ class _MergeTextStyleState extends State<MergeTextStyle> {
 
     print(refinedMatch);
 
-    var refinedSearch = search.toLowerCase();
+    var refinedSearch = search?.toLowerCase();
 
-    for (String token in refinedSearch.split(" ")) {
+    for (String token in refinedSearch!.split(" ")) {
       if (token.contains(refinedSearch)) {
         matches.addAll(token.allMatches(refinedMatch));
       }

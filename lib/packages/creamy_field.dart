@@ -23,7 +23,7 @@ class MyEditorApp extends StatefulWidget {
 
 class _MyEditorAppState extends State<MyEditorApp> {
   // Declared a regular syntax controller.
-  CreamyEditingController controller;
+  CreamyEditingController? controller;
 
   @override
   void initState() {
@@ -63,7 +63,7 @@ class _MyEditorAppState extends State<MyEditorApp> {
   Widget build(BuildContext context) {
     // var currentMode = controller.buildTextSpan(style: TextMode.normal);
     bool _isDark = Theme.of(context).brightness == Brightness.dark;
-    var _getFontStyle = controller.buildTextSpan(
+    var _getFontStyle = controller!.buildTextSpan(
       style: getStyle(currentMode),
     );
     return new Scaffold(
@@ -75,7 +75,7 @@ class _MyEditorAppState extends State<MyEditorApp> {
             child: Text('Add tab'),
             onPressed: () {
               // Adds a tab at the selection's base base-offet
-              controller.addTab();
+              controller!.addTab();
             },
           )
         ],
@@ -137,7 +137,7 @@ class _MyEditorAppState extends State<MyEditorApp> {
   }
 
   editHighlightedText(TextStyle style) {
-    return controller.buildTextSpan(
+    return controller!.buildTextSpan(
       style: style,
     );
   }

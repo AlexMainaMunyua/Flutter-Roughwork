@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_pay/google_pay.dart';
 
 class SubscribeToGroup extends StatefulWidget {
-  const SubscribeToGroup({Key key}) : super(key: key);
+  const SubscribeToGroup({Key? key}) : super(key: key);
 
   @override
   _SubscribeToGroupState createState() => _SubscribeToGroupState();
@@ -175,7 +175,7 @@ class _SubscribeToGroupState extends State<SubscribeToGroup> {
 }
 
 class WelcomeToGroup extends StatelessWidget {
-  const WelcomeToGroup({Key key}) : super(key: key);
+  const WelcomeToGroup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
